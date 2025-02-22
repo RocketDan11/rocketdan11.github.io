@@ -11,12 +11,12 @@ export default function Home() {
         <section className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-8 text-blue-600">Spread the World</h1>
           <p className="text-xl mb-8">Bringing computer literacy to disenfranchised Mesoamericans</p>
-          <a 
+          <Link 
             href="/donate" 
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             Support Our Mission
-          </a>
+          </Link>
         </section>
 
         <section>
@@ -34,12 +34,12 @@ export default function Home() {
           ))}
           {latestPosts.length > 0 && (
             <div className="text-center mt-8">
-              <a 
+              <Link 
                 href="/blog" 
                 className="text-blue-600 hover:text-blue-800 font-semibold"
               >
                 Read More Posts →
-              </a>
+              </Link>
             </div>
           )}
         </section>

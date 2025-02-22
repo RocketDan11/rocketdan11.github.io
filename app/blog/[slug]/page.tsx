@@ -1,9 +1,11 @@
 import { getPostData, getAllPostIds } from '@/lib/posts';
 import Markdown from 'markdown-to-jsx';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const paths = getAllPostIds();
-  return paths;
+  return paths.map((path) => ({
+    slug: path.params.id
+  }));
 }
 
 export default function BlogPost({ params }: { params: { slug: string } }) {
