@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Donate() {
   return (
     <main className="min-h-screen p-8 bg-gray-100">
@@ -38,12 +40,12 @@ export default function Donate() {
               <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                 Donate Now
               </button>
-              <a 
+              <Link 
                 href="/about" 
                 className="text-blue-600 hover:text-blue-800 font-semibold"
               >
                 Learn More About Our Work
-              </a>
+              </Link>
             </div>
             <p className="mt-8 text-sm text-gray-600">
               Note: This is a demo page. In a real implementation, you would integrate with a payment processor like Stripe.
