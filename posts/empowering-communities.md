@@ -23,7 +23,7 @@ Many communities in Mesoamerica lack access to basic computer technology and the
 
 ## Success Stories
 
-Maria, a young woman from rural Guatemala, used her new computer skills to start an online business selling traditional textiles. Her success has inspired others in her community to embrace technology as a tool for economic empowerment.
+--place holder --
 
 ## How You Can Help
 
