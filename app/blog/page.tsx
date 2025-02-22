@@ -13,10 +13,12 @@ export default function Blog() {
           {posts.map((post) => (
             <BlogPost
               key={post.id}
+              id={post.id}
               title={post.title}
               date={post.date}
               content={post.excerpt}
               tags={post.tags}
+              isExcerpt={true}
             />
           ))}
         </div>
