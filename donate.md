@@ -186,4 +186,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## Other Ways to Support
 
-If you prefer to donate by check or bank transfer, please contact us at [donations@spreadtheworld.org](mailto:donations@spreadtheworld.org) for instructions.
+If you prefer to donate by check or bank transfer, please contact us at [blanca@spreadtheworld.org](mailto:blanca@spreadtheworld.org) for instructions.
