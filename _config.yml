@@ -1,8 +1,8 @@
-title: Rocket Dan's Site
-description: A personal webpage with a blog, mission page, and donate page.
-baseurl: "" # leave empty if the site is at the root
+title: Spread The World
+description: Spreading the world through computer literacy.
+baseurl: "" 
 url: "https://spreadtheworld.org"
-theme: minima  # you can choose another theme if you prefer
+theme: minima  #maybe change?
 
 # This will add pages to your header navigation (works with themes that support it)
 header_pages:
