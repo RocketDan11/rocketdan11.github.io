@@ -15,6 +15,8 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
   
   <div class="donation-options">
     <a href="https://buy.stripe.com/bIY9C9g8E3flerK001" class="donation-button">Donate $10</a>
+    <a href="https://buy.stripe.com/4gw5lTaOk3flerKdQS" class="donation-button">Donate $50</a>
+    <a href="https://buy.stripe.com/7sIcOl7C8g27bfyfZ1" class="donation-button">Donate $500</a>
   </div>
   
   <p class="custom-amount-text">For custom amounts, please contact us at <a href="mailto:blanca@spreadtheworld.org">blanca@spreadtheworld.org</a></p>
@@ -69,10 +71,9 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
 
 ## How Your Donation Helps
 
-- **$10** provides basic computer supplies for one student
-- **$25** funds a half-day computer literacy workshop
-- **$50** helps establish an internet connection for a community center
-- **$100** provides refurbished computer equipment to a classroom
+- **$10** Helps cover maintenance costs 
+- **$50** Helps establish an internet connection for the classroom
+- **$500** Helps provide computers for the classroom
 
 ## Other Ways to Support
 
