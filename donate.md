@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
         successUrl: baseUrl + '/thank-you',
         cancelUrl: baseUrl + '/donate',
         billingAddressCollection: 'required',
-        customerEmail: 'auto',
         submitType: 'donate'
       })
       .then(function(result) {
