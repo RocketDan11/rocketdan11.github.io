@@ -14,10 +14,8 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
   <p>Select a donation amount:</p>
   
   <div class="donation-options">
-    <button class="donation-button" data-price-id="price_1R34oUG86rNUvt5QIxd72zmr">Donate $10</button>
+    <a href="https://buy.stripe.com/bIY9C9g8E3flerK001" class="donation-button">Donate $10</a>
   </div>
-  
-  <div id="error-message"></div>
   
   <p class="custom-amount-text">For custom amounts, please contact us at <a href="mailto:blanca@spreadtheworld.org">blanca@spreadtheworld.org</a></p>
 </div>
@@ -49,10 +47,13 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
 .donation-button:hover {
   background-color: #45a049;
+  text-decoration: none;
+  color: white;
 }
 
 .custom-amount-text {
@@ -65,51 +66,6 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
   margin-top: 10px;
 }
 </style>
-
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Initialize Stripe
-  const stripe = Stripe('pk_live_51R33mzG86rNUvt5Q0djuGlR4ACYcykpvjPh5MyOvjYpknEhWgCsgLz68DdKpBNT108s0insIAJ8VFm6Qgsf3VFOl00XMrbEUeS');
-  const buttons = document.querySelectorAll('.donation-button');
-  const errorMessage = document.getElementById('error-message');
-  
-  // Get the base URL for success and cancel redirects
-  const baseUrl = window.location.origin;
-  
-  // Add click handlers to donation buttons
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      const priceId = this.getAttribute('data-price-id');
-      
-      // Clear any previous error messages
-      errorMessage.textContent = '';
-      
-      // Redirect to Stripe Checkout
-      stripe.redirectToCheckout({
-        lineItems: [{
-          price: priceId,
-          quantity: 1
-        }],
-        mode: 'payment',
-        successUrl: baseUrl + '/thank-you',
-        cancelUrl: baseUrl + '/donate',
-        billingAddressCollection: 'required',
-        submitType: 'donate'
-      })
-      .then(function(result) {
-        if (result.error) {
-          // Display any errors that occur
-          errorMessage.textContent = result.error.message;
-        }
-      })
-      .catch(function(error) {
-        errorMessage.textContent = 'There was an error processing your donation: ' + error.message;
-      });
-    });
-  });
-});
-</script>
 
 ## How Your Donation Helps
 
