@@ -70,7 +70,7 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize Stripe
-  const stripe = Stripe('pk_test_51R33n6QCDKJKkRa4WqDgTcvWcxTfH4ynXoXVQeaoN5x3CAyAd59kSuWhKfJxRUriZn15TrIhAoc8hgpRNBfE6Ngu00GWMToDN8');
+  const stripe = Stripe('pk_live_51R33mzG86rNUvt5Q0djuGlR4ACYcykpvjPh5MyOvjYpknEhWgCsgLz68DdKpBNT108s0insIAJ8VFm6Qgsf3VFOl00XMrbEUeS');
   const buttons = document.querySelectorAll('.donation-button');
   const errorMessage = document.getElementById('error-message');
   
