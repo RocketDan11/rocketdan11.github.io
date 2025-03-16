@@ -11,20 +11,16 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
 ## Make a Donation
 
 <div class="donation-container">
+  <p>Select a donation amount:</p>
+  
   <div class="donation-options">
-    <button class="donation-amount" data-amount="10">$10</button>
-    <button class="donation-amount" data-amount="25">$25</button>
-    <button class="donation-amount" data-amount="50">$50</button>
-    <button class="donation-amount" data-amount="100">$100</button>
-    <div class="custom-amount">
-      <label for="custom-donation">Custom Amount ($):</label>
-      <input type="number" id="custom-donation" min="1" placeholder="Enter amount">
-    </div>
+    <button class="donation-button" data-price-id="prod_Rwym9tRxBm6yI3">Donate $10</button>
   </div>
-  <button id="donate-button" class="donate-btn">Donate Now</button>
+  
+  <div id="error-message"></div>
+  
+  <p class="custom-amount-text">For custom amounts, please contact us at <a href="mailto:blanca@spreadtheworld.org">blanca@spreadtheworld.org</a></p>
 </div>
-
-<div id="error-message"></div>
 
 <style>
 .donation-container {
@@ -38,52 +34,30 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
 .donation-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin: 20px 0;
 }
 
-.donation-amount {
-  padding: 10px 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: white;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.donation-amount:hover, .donation-amount.selected {
-  background-color: #4CAF50;
-  color: white;
-  border-color: #4CAF50;
-}
-
-.custom-amount {
-  width: 100%;
-  margin-top: 15px;
-}
-
-.custom-amount input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  width: 100%;
-  margin-top: 5px;
-}
-
-.donate-btn {
-  background-color: #4CAF50;
-  color: white;
+.donation-button {
+  display: inline-block;
   padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
   font-weight: bold;
+  text-align: center;
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.donate-btn:hover {
+.donation-button:hover {
   background-color: #45a049;
+}
+
+.custom-amount-text {
+  margin-top: 20px;
+  font-style: italic;
 }
 
 #error-message {
@@ -95,94 +69,55 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
 <script src="https://js.stripe.com/v3/"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Select donation amount buttons and custom input
-  const amountButtons = document.querySelectorAll('.donation-amount');
-  const customAmountInput = document.getElementById('custom-donation');
-  const donateButton = document.getElementById('donate-button');
+  // Initialize Stripe
+  const stripe = Stripe('pk_test_51R33n6QCDKJKkRa4WqDgTcvWcxTfH4ynXoXVQeaoN5x3CAyAd59kSuWhKfJxRUriZn15TrIhAoc8hgpRNBfE6Ngu00GWMToDN8');
+  const buttons = document.querySelectorAll('.donation-button');
   const errorMessage = document.getElementById('error-message');
   
-  let selectedAmount = null;
-
-  // Add click event to amount buttons
-  amountButtons.forEach(button => {
+  // Get the base URL for success and cancel redirects
+  const baseUrl = window.location.origin;
+  
+  // Add click handlers to donation buttons
+  buttons.forEach(button => {
     button.addEventListener('click', function() {
-      // Remove selected class from all buttons
-      amountButtons.forEach(btn => btn.classList.remove('selected'));
+      const priceId = this.getAttribute('data-price-id');
       
-      // Add selected class to clicked button
-      this.classList.add('selected');
+      // Clear any previous error messages
+      errorMessage.textContent = '';
       
-      // Store selected amount
-      selectedAmount = parseInt(this.getAttribute('data-amount'));
-      
-      // Clear custom amount input
-      customAmountInput.value = '';
-    });
-  });
-
-  // Handle custom amount input
-  customAmountInput.addEventListener('input', function() {
-    // Remove selected class from all buttons
-    amountButtons.forEach(btn => btn.classList.remove('selected'));
-    
-    // Store custom amount if valid
-    if (this.value && parseInt(this.value) > 0) {
-      selectedAmount = parseInt(this.value);
-    } else {
-      selectedAmount = null;
-    }
-  });
-
-  // Handle donate button click
-  donateButton.addEventListener('click', function() {
-    // Clear previous messages
-    errorMessage.textContent = '';
-    
-    if (!selectedAmount) {
-      errorMessage.textContent = 'Please select or enter a donation amount.';
-      return;
-    }
-
-    // Replace these with your actual Stripe account values
-    const stripePublishableKey = 'pk_test_51R33n6QCDKJKkRa4WqDgTcvWcxTfH4ynXoXVQeaoN5x3CAyAd59kSuWhKfJxRUriZn15TrIhAoc8hgpRNBfE6Ngu00GWMToDN8';
-    const successUrl = 'https://spreadtheworld.org/thank-you';
-    const cancelUrl = 'https://spreadtheworld.org/donate';
-    
-    // Create a Stripe instance with your publishable key
-    const stripe = Stripe(stripePublishableKey);
-    
-    // Redirect to Stripe Checkout
-    stripe.redirectToCheckout({
-      lineItems: [{
-        price_data: {
-          currency: 'usd',
-          product_data: {
-            name: 'Donation to Spread The World',
-            description: 'Supporting computer literacy in Mesoamerican communities',
-            images: ['https://spreadtheworld.org/assets/images/logo.png'], // Optional: Add your logo
-          },
-          unit_amount: selectedAmount * 100, // Stripe uses cents
-        },
-        quantity: 1,
-      }],
-      mode: 'payment',
-      successUrl: successUrl,
-      cancelUrl: cancelUrl,
-      // Optional: Collect donor information
-      billingAddressCollection: 'required',
-      // Optional: Add custom fields
-      customerEmail: 'auto', // Automatically detect customer email if possible
-      submitType: 'donate', // Shows "Donate" instead of "Pay" on the Stripe form
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If there's an error, display it to the customer
-        errorMessage.textContent = result.error.message;
-      }
+      // Redirect to Stripe Checkout
+      stripe.redirectToCheckout({
+        lineItems: [{
+          price: priceId,
+          quantity: 1
+        }],
+        mode: 'payment',
+        successUrl: baseUrl + '/thank-you',
+        cancelUrl: baseUrl + '/donate',
+        billingAddressCollection: 'required',
+        customerEmail: 'auto',
+        submitType: 'donate'
+      })
+      .then(function(result) {
+        if (result.error) {
+          // Display any errors that occur
+          errorMessage.textContent = result.error.message;
+        }
+      })
+      .catch(function(error) {
+        errorMessage.textContent = 'There was an error processing your donation: ' + error.message;
+      });
     });
   });
 });
 </script>
+
+## How Your Donation Helps
+
+- **$10** provides basic computer supplies for one student
+- **$25** funds a half-day computer literacy workshop
+- **$50** helps establish an internet connection for a community center
+- **$100** provides refurbished computer equipment to a classroom
 
 ## Other Ways to Support
 
