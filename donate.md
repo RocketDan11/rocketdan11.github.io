@@ -14,7 +14,7 @@ Your donation can spark change! By contributing, you empower disenfranchised Mes
   <p>Select a donation amount:</p>
   
   <div class="donation-options">
-    <button class="donation-button" data-price-id="prod_Rwym9tRxBm6yI3">Donate $10</button>
+    <button class="donation-button" data-price-id="price_1R34oUG86rNUvt5QIxd72zmr">Donate $10</button>
   </div>
   
   <div id="error-message"></div>
