@@ -1,3 +1,10 @@
+---
+layout: post
+title: "English to Purepecha Translator"
+date: 2025-03-23
+categories: blog
+---
+
 Bridging Languages: Our New English-to-Purépecha Translator
 
 At Spread The World, we believe in the power of language to connect cultures and preserve heritage. Recently, we created an innovative tool—a machine learning model that translates English into [Purépecha](https://spreadtheworld.org/2025/03/23/purepecha.html), an indigenous language Meso-American language.
@@ -12,6 +19,7 @@ We're excited to continue refining this tool, expanding its capabilities, and fu
 
 
 [See the model here](https://github.com/RocketDan11/ml/tree/master/purepecha)
+
 [See the training data here](https://github.com/RocketDan11/ml/tree/master/purepecha/assets)
 
 To contribute to the training data, please contact us at [blanca@spreadtheworld.org](mailto:blanca@spreadtheworld.org).

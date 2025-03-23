@@ -1,3 +1,10 @@
+---
+layout: post
+title: "The Purepecha Language"
+date: 2025-03-23
+categories: blog
+---
+
 Purepecha, formerly known as Tarascan, is a language isolate spoken by approximately 110,000 people in the state of Michoacán, Mexico. Despite its location within the Mesoamerican region, Purepecha exhibits unique linguistic features that distinguish it from neighboring languages.​
 
 ## Sociolinguistic and Dialectal Characteristics
