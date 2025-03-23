@@ -1,6 +1,6 @@
 Bridging Languages: Our New English-to-Purépecha Translator
 
-At Spread The World, we believe in the power of language to connect cultures and preserve heritage. Recently, we created an innovative tool—a machine learning model that translates English into Purépecha, an indigenous language Meso-American language.
+At Spread The World, we believe in the power of language to connect cultures and preserve heritage. Recently, we created an innovative tool—a machine learning model that translates English into [Purépecha](https://spreadtheworld.org/2025/03/23/purepecha.html), an indigenous language Meso-American language.
 
 Our translator was built using authentic language data sourced from historical church records and academic linguistics theses. By training our neural network with these carefully curated texts, we ensured the translations stay true to cultural nuances and expressions unique to the Purépecha language.
 
