@@ -40,4 +40,4 @@ Despite its geographical location, Purepecha is not classified within the Mesoam
 
 In summary, Purepecha stands as a testament to linguistic diversity, offering rich morphological and syntactic structures that continue to intrigue linguists and language enthusiasts alike.​
 
-[Learn more about purepecha here](https://shs.hal.science/halshs-03880946/document) and [here](https://purhepecherka.tripod.com/id9.html).
+Learn more about purepecha [here](https://shs.hal.science/halshs-03880946/document) and [here](https://purhepecherka.tripod.com/id9.html).
